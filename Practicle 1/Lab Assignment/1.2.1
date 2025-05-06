@@ -1,0 +1,24 @@
+def calculate_grade(marks):
+	if any(mark < 40 for mark in marks):
+		return "Fail"
+	total_marks = sum(marks)
+	aggregate_percentage = round((total_marks / (len(marks) * 100)) * 100,2)
+	if aggregate_percentage > 75:
+		return aggregate_percentage, "Distinction"
+	elif aggregate_percentage >= 60:
+		return aggregate_percentage, "First Division"
+	elif aggregate_percentage >= 50:
+		return aggregate_percentage, "Second Division"
+	elif aggregate_percentage >= 40:
+		return aggregate_percentage, "Third Division"
+	return aggregate_percentage, "Third Division"
+num_course = int(input())
+marks = list(map(int, input().split()))
+result = calculate_grade(marks)
+
+if result == "Fail":
+	print("Fail")
+else:
+	aggregate_percentage, grade = result
+	print(f"Aggregate Percentage: {aggregate_percentage:.2f}")
+	print(f"Grade: {grade}")

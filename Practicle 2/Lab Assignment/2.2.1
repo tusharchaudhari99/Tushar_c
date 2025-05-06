@@ -1,0 +1,14 @@
+# Read the array of integers
+arr = list(map(int, input().split()))
+
+# Read the key element to be searched
+key = int(input())
+
+# Perform linear search
+for i, num in enumerate(arr):
+    if num == key:
+        print(i)
+        break
+else:
+    print("Not found")
+

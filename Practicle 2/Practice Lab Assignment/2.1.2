@@ -1,0 +1,47 @@
+# Create an empty dictionary and display it
+d = {}
+print("Empty Dictionary:", d)
+
+# Ask user how many items to add
+n = int(input("Number of items: "))
+for _ in range(n):
+    key = input("key: ")
+    value = input("value: ")
+    d[key] = value
+
+# Show dictionary after adding items
+print("Dictionary:", d)
+
+# Ask user to update a key’s value
+update_key = input("Enter the key to update: ")
+if update_key in d:
+    d[update_key] = input("Enter the new value: ")
+    print("Value updated")
+else:
+    print("Key not found")
+
+# Retrieve and print a value using a key
+retrieve_key = input("Enter the key to retrieve: ")
+if retrieve_key in d:
+    print(f"Key: {retrieve_key}, Value: {d[retrieve_key]}")
+else:
+    print("Key not found")
+
+# Use get() to retrieve a value
+get_key = input("Enter the key to get using the get() method: ")
+if get_key in d:
+    print(f"Key: {get_key}, Value: {d.get(get_key)}")
+else:
+    print("Key not found")
+
+# Delete a key-value pair
+delete_key = input("Enter the key to delete: ")
+if delete_key in d:
+    del d[delete_key]
+    print("Deleted")
+else:
+    print("Key not found")
+
+# Display the updated dictionary
+print("Updated Dictionary:", d)
+
